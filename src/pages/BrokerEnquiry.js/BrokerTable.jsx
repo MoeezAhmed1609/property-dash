@@ -12,17 +12,12 @@ import Typography from "@mui/material/Typography";
 import Paper from "@mui/material/Paper";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../Config";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { SingleProperty } from "../../Redux/Action/SingleProperty";
 
 function Row(props) {
   const { row } = props;
   const [open, setOpen] = React.useState(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   // Handling deal done
   const HandleDeal = async (id, status) => {
@@ -42,23 +37,6 @@ function Row(props) {
     });
     alert("Property deactivated!");
   };
-
-
-
-  const propert = async (id) => {
-    console.log(id)
-    const docRef = doc(db, "properties", id);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-      dispatch(SingleProperty({id:doc.id,...docSnap.data()}));
-      navigate(`/Single/${id}`);
-    } else {
-      // docSnap.data() will be undefined in this case
-      console.log("No such document!");
-    }
-  }
-
   console.log({ row });
   return (
     <React.Fragment>
@@ -108,9 +86,9 @@ function Row(props) {
                 </TableHead>
                 <TableBody>
                   {row.properties?.map((property, i) => (
-                    <TableRow key={i} onClick={()=>  propert(property.id)}>
+                    <TableRow key={i}>
                       <TableCell component="th" scope="row">
-                        <span onClick={()=> propert(property.id)} className="cursor-pointer">{property?.Property_Name}</span>
+                        {property?.Property_Name}
                       </TableCell>
                       <TableCell>{property?.County}</TableCell>
                       <TableCell align="right">

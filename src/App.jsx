@@ -38,7 +38,6 @@ import DashboardUsers from "./pages/DashboardUsers";
 
 import "react-modern-drawer/dist/index.css";
 import BrokerEnquiry from "./pages/BrokerEnquiry.js";
-import Subscription from "./pages/Subscription";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -82,7 +81,7 @@ const App = () => {
               <Route path="/user" element={<User />} />
               <Route path="/properties" element={<Properties />} />
               <Route path="/testimonial" element={<Testimonials />} />
-              <Route path="/Single/:id" element={<PropertyView />} />
+              <Route path="/Single" element={<PropertyView />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/:id" element={<UpdateProperty />} />
@@ -93,7 +92,6 @@ const App = () => {
               <Route path="/about" element={<AboutUsGuide />} />
               <Route path="/content" element={<ContentUpload />} />
               <Route path="/dash/users" element={<DashboardUsers />} />
-              <Route path="/subscription" element={<Subscription />} />
             </Routes>
           </PersistGate>
         </Provider>

@@ -189,3 +189,11 @@ span.flatpickr-weekday,
   height: 60vh;
   overflow: auto;
 }
+
+.drop-box {
+  display: none;
+}
+
+.drop-icon:hover + .drop-box {
+  display: block;
+}

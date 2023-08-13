@@ -8,8 +8,6 @@ export default function PropertyView() {
         console.log(state)
         setSinglePropertyData(state)
     },[])
-
-    
     return (
         <div className="container mx-auto px-4 py-8">
             <div className="bg-white rounded-lg shadow-md overflow-hidden py-10 px-10">

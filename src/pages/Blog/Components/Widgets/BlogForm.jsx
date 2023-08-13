@@ -59,7 +59,7 @@ export default function BlogForm() {
         
       });
       console.log("Document written with ID: ", docRef.id);
-      // toast("Content Added Success !")
+      toast("Content Added Success !")
     }
   
    

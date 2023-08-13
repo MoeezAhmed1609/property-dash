@@ -1,15 +1,10 @@
-import { AiOutlineUser,  AiOutlineContacts, AiOutlineTeam, AiOutlineCloudUpload } from "react-icons/ai"
+import { AiOutlineUser, AiFillContacts, AiOutlineContacts, AiOutlineTeam, AiOutlineCloudUpload } from "react-icons/ai"
 import { FaBlogger } from "react-icons/fa"
 import { BsFillHouseAddFill, BsFillChatLeftQuoteFill } from "react-icons/bs"
 import { BiUserCircle } from "react-icons/bi"
 import { SiAboutdotme } from "react-icons/si"
 
 const NavData = [
-    {
-        name: "Analytics",
-        link: '/',
-        icon: AiOutlineUser,
-    },
     {
         name: "User",
         link: '/user',
@@ -41,13 +36,6 @@ const NavData = [
         link: '/enquiry',
         icon: AiOutlineContacts,
     },
-    
-    {
-        name: "Subscription",
-        link: '/subscription',
-        icon: AiOutlineContacts,
-    },
-
     {
         name: "Broker Enquiry",
         link: '/broker-enquiry',
@@ -74,7 +62,6 @@ const NavData = [
         link: '/dash/users',
         icon: BiUserCircle,
     },
-
 
 
 

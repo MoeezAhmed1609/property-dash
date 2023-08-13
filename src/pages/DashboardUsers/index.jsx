@@ -21,7 +21,7 @@ export default function DashboardUsers() {
     const [tags, setTags] = useState([]);
     const [inputValue, setInputValue] = useState('');
     const user = useSelector(state => state.DashReducer.login);
-    
+
 
 
     // -------------- USER USESTATES ---------------------------------
@@ -34,7 +34,7 @@ export default function DashboardUsers() {
     // -------------- ADD A USER ------------------------------------
     const HandleAddUser = async () => {
         console.log('App')
-        if(Name == '' || Phone  == '' || Email == '' || password == '') {
+        if (Name == '' || Phone == '' || Email == '' || password == '') {
             toast("Wow so easy!")
         }
 
@@ -49,7 +49,7 @@ export default function DashboardUsers() {
                 // Signed in 
                 const user = userCredential.user;
                 Handle(user)
-               
+
             })
             .catch((error) => {
                 const errorCode = error.code;
@@ -57,8 +57,8 @@ export default function DashboardUsers() {
                 // ..
             });
     }
-    
-    const Handle = async (user) =>{
+
+    const Handle = async (user) => {
         await setDoc(doc(db, "Dashboard_Users", user.uid), {
             name: Name,
             phone: Phone,
@@ -128,21 +128,21 @@ export default function DashboardUsers() {
                 <div className="flex flex-col gap-2 mx-w-[300px] overflow-y-auto">
                     <div className="">
                         <label htmlFor="" className='block mb-2 px-2'>Name: </label>
-                        <input type='text' onChange={(e)=>setName(e.target.value)} placeholder='Enter User Name: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
+                        <input type='text' onChange={(e) => setName(e.target.value)} placeholder='Enter User Name: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
                     </div>
 
                     <div className="">
                         <label htmlFor="" className='block mb-2 px-2'>Phone: </label>
-                        <input type='number' onChange={(e)=>setPhone(e.target.value)} placeholder='Enter Phone: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
+                        <input type='number' onChange={(e) => setPhone(e.target.value)} placeholder='Enter Phone: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
                     </div>
 
                     <div className="">
                         <label htmlFor="" className='block mb-2 px-2'>Email: </label>
-                        <input type='email' onChange={(e)=>setEmail(e.target.value)} placeholder='Enter Email: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
+                        <input type='email' onChange={(e) => setEmail(e.target.value)} placeholder='Enter Email: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
                     </div>
                     <div className="">
                         <label htmlFor="" className='block mb-2 px-2'>Password: </label>
-                        <input type='Password' onChange={(e)=>setPassword(e.target.value)} placeholder='Enter Phone: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
+                        <input type='Password' onChange={(e) => setPassword(e.target.value)} placeholder='Enter Phone: ' className='w-[300px] px-2 py-3 border border-gray-300 rounded-md focus:border-none' />
                     </div>
 
                     <div className="">
@@ -162,7 +162,7 @@ export default function DashboardUsers() {
                         </div>
 
                     </div>
-                    <div  className="w-full flex rounded-md justify-center items-center py-2 bg-black">
+                    <div className="w-full flex rounded-md justify-center items-center py-2 bg-black">
                         <button onClick={HandleAddUser}>Add User</button>
                     </div>
 

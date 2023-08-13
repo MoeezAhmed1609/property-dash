@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import DefaultLayout from '../../layout/DefaultLayout'
 import CardLayout from '../../components/CardLayout'
 import { Investing } from '../../js/Testimonials'
-import { Box, useDisclosure } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import TabsComponent from '../../components/TabsComponent'
 import { TabPanel } from 'react-tabs'
 import AddTestimonials from './Components/AddTestimonials'
@@ -35,30 +35,26 @@ export default function Testimonials() {
 
 
     return (
-        <React.Fragment>
-            <DefaultLayout>
-                <TabsComponent Header={["Invest", 'Add New']}>
+        <DefaultLayout>
+            <TabsComponent Header={["Invest", 'Add New']}>
 
-                    <TabPanel>
-                        <Box className="w-full h-screen grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
-                            {
-                                Testimonial.map((item) => {
-                                    return (
-                                        <CardLayout item={item} title={item.Title} img={item.img} onDelete={() => DeletedSuccess(item.id)} description={item.desc} />
+                <TabPanel>
+                    <Box className="w-full h-screen grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-2">
+                        {
+                            Testimonial.map((item) => {
+                                return (
+                                    <CardLayout title={item.Title} img={item.img} onDelete={()=>DeletedSuccess(item.id)} description={item.desc} />
 
-                                    )
-                                })
-                            }
-                        </Box>
-                    </TabPanel>
-                    <TabPanel>
-                        <AddTestimonials />
-                    </TabPanel>
-                </TabsComponent>
-            </DefaultLayout>
+                                )
+                            })
+                        }
+                    </Box>
+                </TabPanel>
+                <TabPanel>
+                    <AddTestimonials />
+                </TabPanel>
+            </TabsComponent>
 
-
-        </React.Fragment>
-
+        </DefaultLayout>
     )
 }

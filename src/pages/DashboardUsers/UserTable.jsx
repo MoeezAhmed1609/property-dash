@@ -32,39 +32,39 @@ export default function UserTable() {
     }, [])
     return (
         <>
-        {
-            isLoading ? <LoadingModal1 isLoading={isLoading} /> :  <div className="container mx-auto p-4">
-            <div className="overflow-x-auto">
-                <table className="table-auto w-full  rounded-md">
-                    <thead>
-                        <tr className="bg-gray-200   bg-[#ff6b6b]  text-gray-600 uppercase text-sm leading-normal">
-                            <th className="py-3 px-6 text-left text-[#000]">Name</th>
-                            <th className="py-3 px-6 text-left text-[#000]">Email</th>
-                            <th className="py-3 px-6 text-left text-[#000]">Phone</th>
-                            <th className="py-3 px-6 text-left text-[#000]">Tags</th>
-                            </tr>
-                    </thead>
-                    <tbody className="text-gray-600 text-sm font-light">
-                        {
-                            Users.map((item) => {
-                                return (
-                                    <tr className="border-b border-gray-300 hover:bg-gray-100">
+            {
+                isLoading ? <LoadingModal1 isLoading={isLoading} /> : <div className="container mx-auto p-4">
+                    <div className="overflow-x-auto">
+                        <table className="table-auto w-full rounded-md">
+                            <thead>
+                                <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
+                                    <th className="py-3 px-6 text-left text-[#ffffff]">Profile</th>
+                                    <th className="py-3 px-6 text-left text-[#ffffff]">Name</th>
+                                    <th className="py-3 px-6 text-left text-[#ffffff]">Email</th>
+                                    <th className="py-3 px-6 text-left text-[#ffffff]">Auth Screen</th>
+                                </tr>
+                            </thead>
+                            <tbody className="text-gray-600 text-sm font-light" style={{ background: 'white' }}>
+                                {
+                                    Users.map((item) => {
+                                        return (
+                                            <tr className="border-b border-gray-300 hover:bg-gray-100">
 
-                                        <td className="py-3 px-6 text-left text-[#000]">{item.name}</td>
-                                        <td className="py-3 px-6 text-left text-[#000]">{item.email}</td>
-                                        <td className="py-3 px-6 text-left text-[#000]">{item.phone}</td>
-                                        <td className="py-3 px-6 text-left text-[#000]">{item.AuthScreens}</td>
-                                    </tr>
-                                )
-                            })
-                        }
+                                                <td className="py-3 px-6 text-left text-[#ffffff]"><img src={item.Profile} alt='Profile' style={{ height: '60px' }} /></td>
+                                                <td className="py-3 px-6 text-left text-[#ffffff]">{item.name}</td>
+                                                <td className="py-3 px-6 text-left text-[#ffffff]">{item.email}</td>
+                                                <td className="py-3 px-6 text-left text-[#ffffff]">{item.AuthScreen}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
 
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        }
-           
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            }
+
 
         </>
 
