@@ -57,7 +57,7 @@ export default function ContentUpload() {
     setValue("");
     setPage("");
     setKey("");
-    set("");
+    // set("");
     toast("Content Added Success !");
   };
 
