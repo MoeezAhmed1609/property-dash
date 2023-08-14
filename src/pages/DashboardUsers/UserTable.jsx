@@ -44,7 +44,7 @@ export default function UserTable() {
                                     <th className="py-3 px-6 text-left text-[#ffffff]">Auth Screen</th>
                                 </tr>
                             </thead>
-                            <tbody className="text-gray-600 text-sm font-light" style={{ background: 'white', color: '#aeb7c0' }}>
+                            <tbody className="text-gray-600 text-sm" style={{ background: 'white', color: 'black' }}>
                                 {
                                     Users.map((item) => {
                                         return (

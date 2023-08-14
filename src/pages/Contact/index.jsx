@@ -33,13 +33,13 @@ function Row(props) {
     return (
         <React.Fragment>
             <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
-                <TableCell component="th" scope="row" sx={{ color: "#cbd0d6" }}>
+                <TableCell component="th" scope="row" sx={{ color: "black" }}>
                     {row.name}
                 </TableCell>
-                <TableCell sx={{ color: "#cbd0d6" }}>{row.Phone}</TableCell>
-                <TableCell sx={{ color: "#cbd0d6" }}>{row.Email}</TableCell>
-                <TableCell sx={{ color: "#cbd0d6" }}>{row.Subject}</TableCell>
-                <TableCell sx={{ color: "#cbd0d6" }}>
+                <TableCell sx={{ color: "black" }}>{row.Phone}</TableCell>
+                <TableCell sx={{ color: "black" }}>{row.Email}</TableCell>
+                <TableCell sx={{ color: "black" }}>{row.Subject}</TableCell>
+                <TableCell sx={{ color: "black" }}>
                     <span
                         className="text-green-800 inline-flex cursor-pointer rounded-full  border-2 px-3 text-xs font-semibold leading-5 hover:bg-[#6ee7b7] hover:text-white"
                         style={{ borderColor: "#6ee7b7" }}
@@ -53,7 +53,7 @@ function Row(props) {
                         aria-label="expand row"
                         size="small"
                         onClick={() => setOpen(!open)}
-                        sx={{ color: "#cbd0d6" }}
+                        sx={{ color: "black" }}
                     >
                         {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                     </IconButton>
@@ -112,32 +112,32 @@ export default function Contact() {
                                 <TableHead>
                                     <TableRow sx={{ background: "#1a222c" }}>
                                         <TableCell
-                                            sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+                                            sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
                                         >
                                             Name
                                         </TableCell>
                                         <TableCell
-                                            sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+                                            sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
                                         >
                                             Phone
                                         </TableCell>
                                         <TableCell
-                                            sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+                                            sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
                                         >
                                             Email
                                         </TableCell>
                                         <TableCell
-                                            sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+                                            sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
                                         >
                                             Subject
                                         </TableCell>
                                         <TableCell
-                                            sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+                                            sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
                                         >
                                             Status
                                         </TableCell>
                                         <TableCell
-                                            sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+                                            sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
                                         >
                                             Message
                                         </TableCell>

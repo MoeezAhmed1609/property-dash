@@ -41,13 +41,13 @@ function Row(props) {
   return (
     <React.Fragment>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
-        <TableCell component="th" scope="row" sx={{ color: "#cbd0d6" }}>
+        <TableCell component="th" scope="row" sx={{ color: "black" }}>
           {row.name}
         </TableCell>
-        <TableCell sx={{ color: "#cbd0d6" }}>{row.Email}</TableCell>
-        <TableCell sx={{ color: "#cbd0d6" }}>{row.phone}</TableCell>
-        <TableCell sx={{ color: "#cbd0d6" }}>{row.properties.length}</TableCell>
-        <TableCell sx={{ color: "#cbd0d6" }}>
+        <TableCell sx={{ color: "black" }}>{row.Email}</TableCell>
+        <TableCell sx={{ color: "black" }}>{row.phone}</TableCell>
+        <TableCell sx={{ color: "black" }}>{row.properties.length}</TableCell>
+        <TableCell sx={{ color: "black" }}>
           <span
             className="text-green-800 inline-flex cursor-pointer rounded-full  border-2 px-3 text-xs font-semibold leading-5 hover:bg-[#6ee7b7] hover:text-white"
             style={{ borderColor: "#6ee7b7" }}
@@ -131,31 +131,31 @@ export default function BrokerTable({ rows }) {
         <TableHead>
           <TableRow sx={{ background: "#1a222c" }}>
             <TableCell
-              sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+              sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
             >
               Name
             </TableCell>
             <TableCell
-              sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+              sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
             >
               Email
             </TableCell>
             <TableCell
-              sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+              sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
             >
               Phone No.
             </TableCell>
             <TableCell
-              sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+              sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
             >
               Total Properties
             </TableCell>
             <TableCell
-              sx={{ color: "#aab2bb", paddingY: 1, textTransform: "uppercase" }}
+              sx={{ color: "white", paddingY: 1, textTransform: "uppercase" }}
             >
               Deal
             </TableCell>
-            <TableCell sx={{ color: "#aab2bb", paddingY: 1 }} align="right" />
+            <TableCell sx={{ color: "white", paddingY: 1 }} align="right" />
           </TableRow>
         </TableHead>
         <TableBody>

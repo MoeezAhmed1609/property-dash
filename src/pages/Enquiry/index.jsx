@@ -96,44 +96,44 @@ export default function Enquiry() {
                   <tr>
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Name
                     </th>
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Email
                     </th>
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Phone No
                     </th>
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Property ID
                     </th>
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Purpose
                     </th>
 
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Deal
                     </th>
                     <th
                       scope="col"
-                      className="text-gray-500 px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
+                      style={{ color: 'white' }} className=" px-6 py-3 text-left text-xs font-medium uppercase tracking-wider"
                     >
                       Active
                     </th>
@@ -144,23 +144,23 @@ export default function Enquiry() {
                     .filter((item) => (Status ? item.purpose == Status : item))
                     .map((item) => {
                       return (
-                        <tr>
+                        <tr style={{ color: 'black' }}>
                           <td className="whitespace-nowrap px-6 py-4">
                             <div className="flex items-center">
                               <div className="ml-4">
-                                <div className="text-gray-900 text-sm font-medium">
+                                <div className=" text-sm font-medium">
                                   {item.name}
                                 </div>
                               </div>
                             </div>
                           </td>
                           <td className="whitespace-nowrap px-6 py-4">
-                            <div className="text-gray-900 text-sm">
+                            <div className=" text-sm">
                               {item.Email}
                             </div>
                           </td>
                           <td className="whitespace-nowrap px-6 py-4">
-                            <div className="text-gray-900 text-sm">
+                            <div className=" text-sm">
                               {item.phone}
                             </div>
                           </td>
@@ -170,7 +170,7 @@ export default function Enquiry() {
                             }
                             className="cursor-pointer whitespace-nowrap px-6 py-4"
                           >
-                            <div className="text-gray-900 text-sm">
+                            <div className=" text-sm">
                               {item.propertyID}
                             </div>
                           </td>

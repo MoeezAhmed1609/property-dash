@@ -35,7 +35,7 @@ export default function User() {
             <DefaultLayout>
                 <Box className="w-full h-auto ">
                     <div className="w-full h-[70px] flex justify-end items-center px-10 cursor-pointer">
-                        <CSVLink data={Users}>Download Csv</CSVLink>
+                        <CSVLink filename={"users.csv"} data={Users}>Download Csv</CSVLink>
                     </div>
 
                     <div className="container mx-auto p-4">
@@ -50,7 +50,7 @@ export default function User() {
                                         <th className="py-3 px-6 text-left text-[#ffffff]">Action</th>
                                     </tr>
                                 </thead>
-                                <tbody className="text-sm" style={{ background: 'white', color: '#aeb7c0' }}>
+                                <tbody className="text-sm" style={{ background: 'white', color: 'black' }}>
                                     {
                                         Users.map((item) => {
                                             return (
