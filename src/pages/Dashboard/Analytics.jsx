@@ -14,9 +14,9 @@ import { AiOutlineLoading } from 'react-icons/ai';
 import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../../Config';
-import { BsFillBuildingFill } from "react-icons/bs"
-import { MdSubscriptions } from "react-icons/md"
-import { AiOutlineUser } from "react-icons/ai"
+import {BsFillBuildingFill} from "react-icons/bs"
+import {MdSubscriptions} from "react-icons/md"
+import {AiOutlineUser} from "react-icons/ai"
 
 const Analytics = () => {
 
@@ -25,8 +25,8 @@ const Analytics = () => {
   const [propertiesData, setpropertiesData] = useState([]);
   const [propertiesEnquiryTotal, setpropertiesEnquiry] = useState([]);
   const [brokerSubscription, setbrokerSubscription] = useState([]);
-  const [profit, setProfit] = useState();
-
+  const [profit ,setProfit] = useState();
+  
 
 
   useEffect(() => {
@@ -86,7 +86,7 @@ const Analytics = () => {
   // }
 
   const TotalProfit = () => {
-    const profit = data.filter(item => item.paid);
+    const profit = data.filter(item => item.paid );
     console.log(profit)
 
     const ProfitValues = profit.map((item) => item.paid);
@@ -102,7 +102,7 @@ const Analytics = () => {
       const value = parseFloat(currentValue.replace(/[^0-9.-]+/g, ''));
       return accumulator + value;
     }, 0);
-
+  
     return total.toFixed(2); // Convert the total back to a formatted currency string
   }
 
@@ -129,12 +129,12 @@ const Analytics = () => {
   return (
     <DefaultLayout>
       <div className='grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5'>
-        <CardFour users={propertiesData} extraCss={''} userName={'Total Properties'} Icon={<BsFillBuildingFill />} />
-        <CardFour users={brokerSubscription} extraCss={''} userName={'Broker Subscription'} Icon={<MdSubscriptions />} />
-        <CardFour users={propertiesEnquiryTotal} extraCss={''} userName={'Total Enquiries'} />
-        <CardFour users={data} extraCss={''} userName={'Total Users'} Icon={<AiOutlineUser />} />
-        <CardFour users={data} profit={profit} extraCss={'col-span-2'} userName={'Total Profit'} Icon={<AiOutlineUser />} />
-        <CardFour users={data} extraCss={'col-span-2'} userName={'Total Users'} Icon={<AiOutlineUser />} />
+        <CardFour users={propertiesData} extraCss = {''} userName={'Total Properties'} Icon = {<BsFillBuildingFill />} />
+        <CardFour users={brokerSubscription} extraCss = {''} userName={'Broker Subscription'} Icon={<MdSubscriptions />} />
+        <CardFour users={propertiesEnquiryTotal} extraCss = {''} userName={'Total Enquiries'} />
+        <CardFour users={data} extraCss = {''} userName={'Total Users'} Icon={<AiOutlineUser />}/>
+        <CardFour users={data} profit={profit} extraCss = {'col-span-2'} userName={'Total Profit'} Icon={<AiOutlineUser />}/>
+        <CardFour users={data} extraCss = {'col-span-2'} userName={'Total Users'} Icon={<AiOutlineUser />}/>
       </div>
 
       <div className='mt-4 grid grid-cols-1 gap-4 md:mt-6 md:gap-6 2xl:mt-7.5 2xl:gap-7.5'>
