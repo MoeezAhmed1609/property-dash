@@ -36,7 +36,7 @@ export default function UserTable() {
                 isLoading ? <LoadingModal1 isLoading={isLoading} /> : <div className="container mx-auto p-4">
                     <div className="overflow-x-auto">
                         <table className="table-auto w-full rounded-md">
-                            <thead>
+                            <thead style={{ background: '#24303f', }}>
                                 <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                     <th className="py-3 px-6 text-left text-[#ffffff]">Profile</th>
                                     <th className="py-3 px-6 text-left text-[#ffffff]">Name</th>
@@ -44,16 +44,16 @@ export default function UserTable() {
                                     <th className="py-3 px-6 text-left text-[#ffffff]">Auth Screen</th>
                                 </tr>
                             </thead>
-                            <tbody className="text-gray-600 text-sm font-light" style={{ background: 'white' }}>
+                            <tbody className="text-gray-600 text-sm font-light" style={{ background: 'white', color: '#aeb7c0' }}>
                                 {
                                     Users.map((item) => {
                                         return (
                                             <tr className="border-b border-gray-300 hover:bg-gray-100">
 
-                                                <td className="py-3 px-6 text-left text-[#ffffff]"><img src={item.Profile} alt='Profile' style={{ height: '60px' }} /></td>
-                                                <td className="py-3 px-6 text-left text-[#ffffff]">{item.name}</td>
-                                                <td className="py-3 px-6 text-left text-[#ffffff]">{item.email}</td>
-                                                <td className="py-3 px-6 text-left text-[#ffffff]">{item.AuthScreen}</td>
+                                                <td className="py-3 px-6 text-left"><img src={item.Profile} alt='Profile' style={{ height: '60px' }} /></td>
+                                                <td className="py-3 px-6 text-left">{item.name}</td>
+                                                <td className="py-3 px-6 text-left">{item.email}</td>
+                                                <td className="py-3 px-6 text-left">{item.AuthScreen}</td>
                                             </tr>
                                         )
                                     })

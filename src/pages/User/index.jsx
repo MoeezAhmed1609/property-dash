@@ -41,7 +41,7 @@ export default function User() {
                     <div className="container mx-auto p-4">
                         <div className="overflow-x-auto">
                             <table className="table-auto w-full  rounded-md">
-                                <thead>
+                                <thead style={{ background: '#24303f', }}>
                                     <tr className="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
                                         <th className="py-3 px-6 text-left text-[#ffffff]">Image</th>
                                         <th className="py-3 px-6 text-left text-[#ffffff]">Name</th>
@@ -62,13 +62,15 @@ export default function User() {
                                                             className="h-8 w-8 rounded-full"
                                                         />
                                                     </td>
-                                                    <td className="py-3 px-6 text-left text-[#ffffff]">{item.name}</td>
-                                                    <td className="py-3 px-6 text-left text-[#ffffff]">{item.Email}</td>
-                                                    <td className="py-3 px-6 text-left text-[#ffffff]">{item.block ? 'block' : 'Active'}</td>
-                                                    <td className="py-3 px-6 text-left text-[#ffffff]">
-                                                        <button className="border border-[#f9c80e] bg-blue-500 hover:bg-blue-700 font-bold py-1 px-2 rounded">
-                                                            Action
-                                                        </button>
+                                                    <td className="py-3 px-6 text-left">{item.name}</td>
+                                                    <td className="py-3 px-6 text-left">{item.Email}</td>
+                                                    <td className="py-3 px-6 text-left">{item.block ? 'block' : 'Active'}</td>
+                                                    <td className="py-3 px-6 text-left">
+                                                        <a href='https://console.firebase.google.com/u/1/project/woven-space-356802/authentication/users' target='_blank'>
+                                                            <button className="border border-[#f9c80e] bg-blue-500 hover:bg-blue-700 font-bold py-1 px-2 rounded">
+                                                                Action
+                                                            </button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             )
