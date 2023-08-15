@@ -26,10 +26,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   const stateAuth = useSelector((state) => state.UserDataReducer);
 
   const filterItem = () => {
-    if (!stateAuth.property) {
-      navigate("/login");
-      return;
-    }
+    // if (!stateAuth) {
+    //   navigate("/login");
+    //   return;
+    // }
     const AuthState = stateAuth.property.AuthScreen.split(" ") || ["All"];
 
     if (AuthState[0] === "All") {
@@ -89,9 +89,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
-        sidebarOpen ? "translate-x-0" : "-translate-x-full"
-      }`}
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
@@ -135,10 +134,9 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
                   <li>
                     <NavLink
                       to={item.link}
-                      className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                        pathname.includes("calendar") &&
+                      className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${pathname.includes("calendar") &&
                         "bg-graydark dark:bg-meta-4"
-                      }`}
+                        }`}
                     >
                       <Icon as={item.icon} />
                       {item.name}

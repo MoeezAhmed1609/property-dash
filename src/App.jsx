@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Analytics from "./pages/Dashboard/Analytics";
 import Calendar from "./pages/Calendar";
 import Profile from "./pages/Profile";
@@ -40,7 +40,9 @@ import "react-modern-drawer/dist/index.css";
 import BrokerEnquiry from "./pages/BrokerEnquiry.js";
 
 const App = () => {
+  const navigate = useNavigate()
   const [loading, setLoading] = useState(true);
+  // const [admin, setAdmin] = useState(false)
 
   const preloader = document.getElementById("preloader");
 
@@ -53,8 +55,10 @@ const App = () => {
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 1000);
+    if (!window.sessionStorage.getItem('user')) {
+      navigate('/login')
+    }
   }, []);
-
   return (
     !loading && (
       <>
@@ -63,7 +67,7 @@ const App = () => {
             <Routes>
               <Route
                 path="/"
-                element={useAuthState ? <Analytics /> : <Login />}
+                element={<Analytics />}
               />
               <Route path="/calendar" element={<Calendar />} />
               <Route path="/profile" element={<Profile />} />

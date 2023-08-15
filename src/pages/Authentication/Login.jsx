@@ -51,11 +51,11 @@ export default function Login() {
                 // Signed in 
                 const user = userCredential.user;
                 console.log(user)
-                
+
                 setIsLoading(true)
                 getUserData(user)
                 setIsLoading(false)
-                dispatch(LoginState(user))
+                // dispatch(LoginState(user))
                 navigate('/')
             })
             .catch((error) => {
@@ -74,6 +74,8 @@ export default function Login() {
 
         if (docSnap.exists()) {
             console.log({ id: doc.id, ...docSnap.data() });
+            const data = JSON.stringify({ id: doc.id, ...docSnap.data() })
+            window.sessionStorage.setItem("user", data)
             dispatch(USERDATA({ id: doc.id, ...docSnap.data() }))
         } else {
             // docSnap.data() will be undefined in this case

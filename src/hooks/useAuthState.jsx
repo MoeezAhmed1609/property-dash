@@ -13,7 +13,6 @@ const useAuthState = () => {
         setIsLoggedIn(false);
       }
     });
-
     // Clean up the subscription when the component unmounts
     return () => unsubscribe();
   }, []);
